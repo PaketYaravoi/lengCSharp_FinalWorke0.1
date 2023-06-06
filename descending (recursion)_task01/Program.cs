@@ -6,9 +6,10 @@ N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1" */
 
 int Descending (int n)
 {
+    
+    if(n < 1 ) return -1;
     Console.WriteLine(n);
-    if(n <= 0 ) return -1; 
-    else return Descending(n -1);
+    return Descending(n -1);
 }
 
 int Prompt(string massage)
@@ -19,6 +20,13 @@ int Prompt(string massage)
     return result;
 }
 
-
 int number = Prompt("Введите натуральное число");
-Descending(number);
+
+if(number < 1)
+{
+    Console.WriteLine("число не является натуральным, пожалуйста, повторите запуск ");
+}
+else
+{
+    Descending(number);
+}
